@@ -69,10 +69,11 @@ courses_form_view = {
                             "fullWidth": False,
                             "fields": [
                                 {"name": "name", "widget": "text"},
+                                {"name": "category", "widget": "relation"},
                                 {"name": "level", "widget": "relation"},
                                 {"name": "package", "widget": "relation"},
                                 {"name": "is_published", "widget": "switch"},
-                               {"name": "description", "widget": "textarea"}
+                                {"name": "description", "widget": "textarea"}
 
                             ]
                         },
