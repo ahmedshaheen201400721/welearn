@@ -12,7 +12,7 @@ this is the courses module
     'application': True,
     'installable': True,
     'auto_install': False,
-    'depends': ['base', 'crm','chatbot'],
+    'depends': ['base', 'crm'],
     'groups': [
         
         {

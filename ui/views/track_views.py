@@ -1,10 +1,10 @@
 from django.utils.translation import gettext as _
 
-category_list_view = {
-    "key": "courses_category_list_view",
-    "menu_item": "courses_child_menu_category",
-    "name": "courses category list view",
-    "model": "courses.category",
+track_list_view = {
+    "key": "courses_track_list_view",
+    "menu_item": "courses_child_menu_track",
+    "name": "courses track list view",
+    "model": "courses.track",
     "view_type": "list",
     "priority": 21,
     'module': 'courses',
@@ -17,11 +17,6 @@ category_list_view = {
                     'string': _('Name'),
                 },
                 {
-                    'name': 'track',
-                    'widget': 'relation',
-                    'string': _('Track'),
-                },
-                  {
                     'name': 'description',
                     'widget': 'text',
                     'string': _('Description'),
@@ -31,29 +26,23 @@ category_list_view = {
     }
 }
 
-category_form_view = {
-    "key": "courses_category_form_view",
-    "name": "Courses Category Form",
-    "menu_item": "courses_child_menu_category",
-    "model": "courses.category",
+track_form_view = {
+    "key": "courses_track_form_view",
+    "name": "Courses track Form",
+    "menu_item": "courses_child_menu_track",
+    "model": "courses.track",
     "view_type": "form",
     "body": {
         "sheet": {
             "sections": [
                 {
-                    "title": " Category Information",
                     "groups": [
                         {
-                            "title": "Category Details",
-                            "fullWidth": False,
                             "fields": [
-                                {"name": "name", "widget": "text"},
-                                {"name": "track", "widget": "relation"},
+                                {"name": "name", "widget": "text"}
                             ]
                         },
                         {
-                            "title": "Description",
-                            "fullWidth": False,
                             "fields": [
                                 {"name": "description", "widget": "textarea"}
                             ]
@@ -64,5 +53,6 @@ category_form_view = {
         }
     }
 }
+
 
 

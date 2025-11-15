@@ -5,6 +5,18 @@ Format: [view, add, change, delete] as [0/1, 0/1, 0/1, 0/1]
 """
 
 MODEL_PERMISSIONS = [
+    # Track
+    {
+        'model': 'courses.track',
+        'group': 'courses.users',
+        'permissions': [1, 1, 1, 0],  # view, add, change, no delete
+    },
+    {
+        'model': 'courses.track',
+        'group': 'courses.admins',
+        'permissions': [1, 1, 1, 1],  # full access
+    },
+    
     # Category
     {
         'model': 'courses.category',
@@ -13,6 +25,18 @@ MODEL_PERMISSIONS = [
     },
     {
         'model': 'courses.category',
+        'group': 'courses.admins',
+        'permissions': [1, 1, 1, 1],  # full access
+    },
+    
+    # Subcategory
+    {
+        'model': 'courses.subcategory',
+        'group': 'courses.users',
+        'permissions': [1, 1, 1, 0],  # view, add, change, no delete
+    },
+    {
+        'model': 'courses.subcategory',
         'group': 'courses.admins',
         'permissions': [1, 1, 1, 1],  # full access
     },

@@ -69,11 +69,12 @@ courses_form_view = {
                             "fullWidth": False,
                             "fields": [
                                 {"name": "name", "widget": "text"},
+                                {"name": "track", "widget": "relation"},
                                 {"name": "category", "widget": "relation"},
+                                {"name": "sub_category", "widget": "relation"},
                                 {"name": "level", "widget": "relation"},
                                 {"name": "package", "widget": "relation"},
-                                {"name": "is_published", "widget": "switch"},
-                                {"name": "description", "widget": "textarea"}
+                               
 
                             ]
                         },
@@ -83,7 +84,8 @@ courses_form_view = {
                             "fields": [
                                 {"name": "price", "widget": "number"},
                                 {"name": "duration_hours", "widget": "number"},
-                                {"name": "created_at", "widget": "datetime"}
+                                 {"name": "is_published", "widget": "switch"},
+                                {"name": "description", "widget": "textarea"}
                             ]
                         }
                     ]

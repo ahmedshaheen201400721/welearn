@@ -1,7 +1,7 @@
 from django.utils.translation import gettext as _
 level_list_view = {
     "key": "courses_level_list_view",
-    "menu_item": "courses_gchild_menu_level",
+    "menu_item": "courses_child_menu_level",
     "name": "courses level list view",
     "model": "courses.level",
     "view_type": "list",
@@ -33,7 +33,7 @@ level_list_view = {
 
 level_form_view = {
     "key": "courses_level_form_view",
-    "menu_item": "courses_gchild_menu_level",
+    "menu_item": "courses_child_menu_level",
     "name": "Courses Level Form",
     "model": "courses.level",
     "view_type": "form",
@@ -66,7 +66,7 @@ level_form_view = {
 }
 level_kanban_view = {
     "key": "courses_level_kanban_view",
-    "menu_item": "courses_gchild_menu_level",
+    "menu_item": "courses_child_menu_level",
     "name": "courses level kanban view",
     "model": "courses.level",
     "view_type": "kanban",
@@ -103,7 +103,7 @@ level_kanban_view = {
 
 level_graph_view = {
     "key": "courses_level_graph_view",
-    "menu_item": "courses_gchild_menu_level",
+    "menu_item": "courses_child_menu_level",
     "name": "courses level graph view",
     "model": "courses.level",
     "view_type": "graph",
@@ -139,7 +139,7 @@ level_graph_view = {
 
 level_search_view = {
     "key": "courses_level_search_view",
-    "menu_item": "courses_gchild_menu_level",
+    "menu_item": "courses_child_menu_level",
     "name": "courses level search view",
     "model": "courses.level",
     "view_type": "search",

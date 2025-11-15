@@ -5,18 +5,36 @@ from django.db import models
 # Models for courses module
 from modules.base.models.base import BaseModel 
 
+
+# Track
+class Track(BaseModel):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank = True, null = True)
+    def __str__(self):
+        return self.name
+
 class Category(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(blank = True, null = True)
+    track=models.ForeignKey(Track, on_delete=models.CASCADE, related_name= "categories", blank=True, null=True)
 
     def __str__(self):
         return self.name
-    
+
+
+class SubCategory(BaseModel):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank = True, null = True)
+    category=models.ForeignKey(Category, on_delete=models.CASCADE, related_name= "subcategories", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 
 class Level(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(blank = True, null= True)
-    order = models.PositiveIntegerField(default=1)
+    order = models.PositiveIntegerField(default=1, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -35,13 +53,14 @@ class Package(BaseModel):
 class Courses(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
+    track = models.ForeignKey(Track, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
     level = models.ForeignKey(Level, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
     package = models.ForeignKey(Package, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name= "courses", blank=True, null=True)
-    duration_hours = models.DecimalField(max_digits=5, decimal_places=2, default=0,)
-    is_published = models.BooleanField(default=False)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default= 2.00)
-    created_at = models.DateTimeField(auto_now_add=True)
+    duration_hours = models.DecimalField(max_digits=5, decimal_places=2, default=0,blank=True, null=True)
+    is_published = models.BooleanField(default=False,blank=True, null=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default= 2.00, blank=True, null=True)
 
     def __str__(self):
         return self.name
