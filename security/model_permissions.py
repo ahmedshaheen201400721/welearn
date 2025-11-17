@@ -53,26 +53,26 @@ MODEL_PERMISSIONS = [
         'permissions': [1, 1, 1, 1],  # full access
     },
     
-    # Package
+    # stage
     {
-        'model': 'courses.package',
+        'model': 'courses.stage',
         'group': 'courses.users',
         'permissions': [1, 1, 1, 0],  # view, add, change, no delete
     },
     {
-        'model': 'courses.package',
+        'model': 'courses.stage',
         'group': 'courses.admins',
         'permissions': [1, 1, 1, 1],  # full access
     },
     
     # Courses
     {
-        'model': 'courses.courses',
+        'model': 'courses.course',
         'group': 'courses.users',
         'permissions': [1, 1, 1, 0],  # view, add, change, no delete
     },
     {
-        'model': 'courses.courses',
+        'model': 'courses.course',
         'group': 'courses.admins',
         'permissions': [1, 1, 1, 1],  # full access
     },

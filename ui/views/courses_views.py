@@ -2,9 +2,9 @@ from django.utils.translation import gettext as _
 
 courses_list_view = {
     "key": "courses_courses_list_view",
-    "menu_item": "courses_gchild_menu_courses",
+    "menu_item": "courses_child_menu_courses",
     "name": "courses courses list view",
-    "model": "courses.courses",
+    "model": "courses.course",
     "view_type": "list",
     "priority": 21,
     'module': 'courses',
@@ -17,14 +17,34 @@ courses_list_view = {
                     'string': _('Name'),
                 },
                 {
+                    'name': 'track',
+                    'widget': 'relation',
+                    'string': _('track'),
+                },
+                {
+                    'name': 'category',
+                    'widget': 'relation',
+                    'string': _('category'),
+                },
+                {
+                    'name': 'sub_category',
+                    'widget': 'relation',
+                    'string': _('sub_category'),
+                },
+                {
                     'name': 'level',
                     'widget': 'relation',
                     'string': _('Level'),
                 },
                 {
-                    'name': 'package',
+                    'name': 'stage',
                     'widget': 'relation',
-                    'string': _('Package'),
+                    'string': _('stage'),
+                },
+                {
+                    'name': 'subject',
+                    'widget': 'relation',
+                    'string': _('subject'),
                 },
                 {
                     'name': 'price',
@@ -32,20 +52,11 @@ courses_list_view = {
                     'string': _('Price')
                 },
                 {
-                    'name': 'duration_hours',
-                    'widget': 'float',
-                    'string': _('Duration (Hours)')
-                },
-                {
                     'name': 'is_published',
                     'widget': 'boolean',
                     'string': _('Published')
                 },
-                {
-                    'name': 'created_at',
-                    'widget': 'datetime',
-                    'string': _('Created At')
-                }
+                
             ]
         }
     }
@@ -54,9 +65,9 @@ courses_list_view = {
 
 courses_form_view = {
     "key": "courses_courses_form_view",
-    "menu_item": "courses_gchild_menu_courses",
+    "menu_item": "courses_child_menu_courses",
     "name": "Courses Form",
-    "model": "courses.courses",
+    "model": "courses.course",
     "view_type": "form",
     "body": {
         "sheet": {
@@ -73,7 +84,8 @@ courses_form_view = {
                                 {"name": "category", "widget": "relation"},
                                 {"name": "sub_category", "widget": "relation"},
                                 {"name": "level", "widget": "relation"},
-                                {"name": "package", "widget": "relation"},
+                                {"name": "stage", "widget": "relation"},
+                                {"name": "subject", "widget": "relation"},
                                
 
                             ]
@@ -109,9 +121,9 @@ courses_form_view = {
 
 courses_kanban_view = {
     "key": "courses_courses_kanban_view",
-    "menu_item": "courses_gchild_menu_courses",
+    "menu_item": "courses_child_menu_courses",
     "name": "courses courses kanban view",
-    "model": "courses.courses",
+    "model": "courses.course",
     "view_type": "kanban",
     "priority": 22,
     "module": "courses",
@@ -140,7 +152,7 @@ courses_kanban_view = {
                 "body": {
                     "fields": [
                         {"name": "description", "tag": "field", "widget": "textarea"},
-                        {"name": "package", "tag": "field", "widget": "relation"},
+                        {"name": "stage", "tag": "field", "widget": "relation"},
                     ],
                 }
             }
@@ -150,9 +162,9 @@ courses_kanban_view = {
 
 courses_graph_view = {
     "key": "courses_courses_graph_view",
-    "menu_item": "courses_gchild_menu_courses",
+    "menu_item": "courses_child_menu_courses",
     "name": "courses courses graph view",
-    "model": "courses.courses",
+    "model": "courses.course",
     "view_type": "graph",
     "priority": 23,
     'module': 'courses',
@@ -164,8 +176,8 @@ courses_graph_view = {
                     'string': _('Level'),
                 },
                 {
-                    'name': 'package',
-                    'string': _('Package'),
+                    'name': 'stage',
+                    'string': _('stage'),
                 },
                 {
                     'name': 'is_published',
@@ -195,9 +207,9 @@ courses_graph_view = {
 
 courses_search_view = {
     "key": "courses_courses_search_view",
-    "menu_item": "courses_gchild_menu_courses",
+    "menu_item": "courses_child_menu_courses",
     "name": "courses courses search view",
-    "model": "courses.courses",
+    "model": "courses.course",
     "view_type": "search",
     "priority": 24,
     'module': 'courses',

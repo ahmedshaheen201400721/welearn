@@ -1,5 +1,5 @@
 from modules.base.model_inheritance import ModelExtension
-from .models import Courses
+from .models import Course
 from modules.base.decorators import action
 from django.db import models
 
@@ -12,7 +12,7 @@ class PartnerExtensioncourse(ModelExtension):
 class CrmCourseExtension(ModelExtension):
     _inherit = 'crm.lead'
 
-    course = models.ForeignKey(Courses, on_delete=models.CASCADE, related_name='leads', blank=True, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='leads', blank=True, null=True)
 
 
 class CoureseInChat(ModelExtension):
@@ -24,7 +24,7 @@ class CoureseInChat(ModelExtension):
                 'status' : True,
                 'open_mode' : 'slideover',
                 'data' : {
-                    'menu_item_key' : 'courses_gchild_menu_courses',
+                    'menu_item_key' : 'courses_child_menu_courses',
                     'view_type' : 'list'
                 },
                 'title': 'courses'

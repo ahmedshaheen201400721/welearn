@@ -24,7 +24,12 @@ level_list_view = {
                     'name': 'description',
                     'widget': 'text',
                     'string': _('Description'),
-                }
+                },
+                 {
+                    'name': 'stage',
+                    'widget': 'relation',
+                    'string':'stage'
+                },
             ]
         }
     }
@@ -55,7 +60,8 @@ level_form_view = {
                             "title": "Description",
                             "fullWidth": False,
                             "fields": [
-                                {"name": "description", "widget": "textarea"}
+                                {"name": "description", "widget": "textarea"},
+                                {"name": "stage", "widget": "relation"}
                             ]
                         }
                     ]

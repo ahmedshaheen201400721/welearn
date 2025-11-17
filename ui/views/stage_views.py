@@ -1,10 +1,10 @@
 from django.utils.translation import gettext as _
 
-package_list_view = {
-    "key": "courses_package_list_view",
-    "menu_item": "courses_child_menu_package",
-    "name": "courses package list view",
-    "model": "courses.package",
+stage_list_view = {
+    "key": "courses_stage_list_view",
+    "menu_item": "courses_child_menu_stage",
+    "name": "courses stage list view",
+    "model": "courses.stage",
     "view_type": "list",
     "priority": 21,
     'module': 'courses',
@@ -26,21 +26,31 @@ package_list_view = {
                     'widget': 'text',
                     'string': _('Duration'),
                 },
-                {
-                    'name': 'is_active',
-                    'widget': 'boolean',
-                    'string': _('Active')
-                }
+                # {
+                #     'name': 'active',
+                #     'widget': 'boolean',
+                #     'string': _('Active')
+                # },
+                # {
+                #     'name': 'category',
+                #     'widget': 'relation',
+                #     'string':'category'
+                # },
+                # {
+                #     'name': 'subcategory',
+                #     'widget': 'relation',
+                #     'string':'subcategory'
+                # },
             ]
         }
     }
 }
 
-package_form_view = {
-    "key": "courses_package_form_view",
-    "name": "Courses Package Form",
-    "menu_item": "courses_child_menu_package",
-    "model": "courses.package",
+stage_form_view = {
+    "key": "courses_stage_form_view",
+    "name": "Courses stage Form",
+    "menu_item": "courses_child_menu_stage",
+    "model": "courses.stage",
     "view_type": "form",
     "body": {
         "sheet": {
@@ -49,20 +59,20 @@ package_form_view = {
                     "title": "Basic Information",
                     "groups": [
                         {
-                            "title": "Package Details",
-                            "fullWidth": False,
+                            "title": "stage Details",
                             "fields": [
                                 {"name": "name", "widget": "text"},
                                 {"name": "price", "widget": "number"},
                                 # {"name": "duration", "widget": "text"},
-                                {"name": "is_active", "widget": "switch"}
+                                # {"name": "active", "widget": "switch"}
                             ]
                         },
                         {
                             "title": "Description",
-                            "fullWidth": False,
                             "fields": [
-                                {"name": "description", "widget": "textarea"}
+                                # {'name': "category", "widget": "relation"},
+                                # {'name': "subcategory", "widget": "relation"},
+                                {"name": "description", "widget": "textarea"},
                             ]
                         }
                     ]
@@ -72,21 +82,21 @@ package_form_view = {
     }
 }
 
-package_kanban_view = {
-    "key": "courses_package_kanban_view",
-    "menu_item": "courses_child_menu_package",
-    "name": "courses package kanban view",
-    "model": "courses.package",
+stage_kanban_view = {
+    "key": "courses_stage_kanban_view",
+    "menu_item": "courses_child_menu_stage",
+    "name": "courses stage kanban view",
+    "model": "courses.stage",
     "view_type": "kanban",
     "priority": 22,
     "module": "courses",
     "body": {
         "kanban": {
-            "id": "courses-package-kanban",
-            "name": "Courses Package Kanban",
-            "description": "Kanban view for courses packages",
+            "id": "courses-stage-kanban",
+            "name": "Courses stage Kanban",
+            "description": "Kanban view for courses stages",
             "group_by": {
-                "name": "is_active",
+                "name": "active",
                 "tag": "field"
             },
             "card": {
@@ -97,7 +107,7 @@ package_kanban_view = {
                     "fields": [
                         {"name": "price", "tag": "field", "widget": "number"},
                         {"name": "duration", "tag": "field", "widget": "text"},
-                        {"name": "is_active", "tag": "field", "widget": "switch"},
+                        {"name": "active", "tag": "field", "widget": "switch"},
                     ],
                     "divider": True,
                 },
@@ -111,11 +121,11 @@ package_kanban_view = {
     }
 }
 
-package_graph_view = {
-    "key": "courses_package_graph_view",
-    "menu_item": "courses_child_menu_package",
-    "name": "courses package graph view",
-    "model": "courses.package",
+stage_graph_view = {
+    "key": "courses_stage_graph_view",
+    "menu_item": "courses_child_menu_stage",
+    "name": "courses stage graph view",
+    "model": "courses.stage",
     "view_type": "graph",
     "priority": 23,
     'module': 'courses',
@@ -124,10 +134,10 @@ package_graph_view = {
             'fields': [
                 {
                     'name': 'name',
-                    'string': _('Package'),
+                    'string': _('stage'),
                 },
                 {
-                    'name': 'is_active',
+                    'name': 'active',
                     'string': _('Active Status'),
                 }
             ],
@@ -147,11 +157,11 @@ package_graph_view = {
     }
 }
 
-package_search_view = {
-    "key": "courses_package_search_view",
-    "menu_item": "courses_child_menu_package",
-    "name": "courses package search view",
-    "model": "courses.package",
+stage_search_view = {
+    "key": "courses_stage_search_view",
+    "menu_item": "courses_child_menu_stage",
+    "name": "courses stage search view",
+    "model": "courses.stage",
     "view_type": "search",
     "priority": 24,
     'module': 'courses',
@@ -169,7 +179,7 @@ package_search_view = {
                     "string": _("Price"),
                 },
                 {
-                    "name": ["is_active"],
+                    "name": ["active"],
                     "widget": "boolean",
                     "string": _("Active"),
                 }
