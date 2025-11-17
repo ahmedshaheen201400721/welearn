@@ -7,6 +7,7 @@
         "icon": "BookOpen",
         "module": "courses",
         "sequence": 44,
+        "allowed_groups": ["courses.admins",],
         'children': {                       #1st gen
             
             "courses_child_menu_courses": {
